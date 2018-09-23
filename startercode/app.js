@@ -2,16 +2,16 @@ require('dotenv').config();
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
+const express = require('express');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const path = require('path');
 
-const session    = require("express-session");
+const session = require("express-session");
 const MongoStore = require('connect-mongo')(session);
-const flash      = require("connect-flash");
+const flash = require("connect-flash");
     
 
 mongoose
@@ -61,7 +61,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Vaina2 - Generated with IronGenerator';
 
 
 // Enable authentication using session + passport

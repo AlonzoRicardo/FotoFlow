@@ -5,6 +5,7 @@ const userSchema = new Schema({
   username: String,
   email: String,
   password: String
+
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -13,4 +14,5 @@ const userSchema = new Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+
 module.exports = User;

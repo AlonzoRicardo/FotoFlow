@@ -73,13 +73,13 @@ app.use(session({
 }))
 app.use(flash());
 require('./passport')(app);
-    
 
-const index = require('./routes/index');
-app.use('/', index);
+const fotoflows = require('./routes/imgflow');
+app.use('/', fotoflows);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
+
       
 
 module.exports = app;

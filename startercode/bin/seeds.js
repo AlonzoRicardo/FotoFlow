@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const FotoFlow = require("../models/fotoFlow");
 
 mongoose
-  .connect('mongodb://localhost/vaina2', {useNewUrlParser: true})
+  .connect('mongodb://localhost/FOTOFLOW', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

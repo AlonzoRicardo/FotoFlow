@@ -4,6 +4,7 @@ const Schema   = mongoose.Schema;
 const fotoFlowSchema = new Schema({
   title: String,
   description: String,
+  path: String,
   imgArr: Array
 }, {
   timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" }

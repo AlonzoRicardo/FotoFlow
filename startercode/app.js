@@ -8,14 +8,13 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
-
 const session = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash = require("connect-flash");
     
 
 mongoose
-  .connect('mongodb://localhost/vaina2', {useNewUrlParser: true})
+  .connect('mongodb://localhost/FOTOFLOW', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -79,6 +78,9 @@ app.use('/', fotoflows);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
+
+const camaraRoutes = require('./routes/camaraRoute')
+app.use('/private', camaraRoutes)
 
       
 

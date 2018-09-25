@@ -1,10 +1,10 @@
 
-<form action="/private/upload" enctype="multipart/form-data">
+<form action="/private/upload" method="POST">
     <input type="text" name="title" placeholder="title">
     <section>
         <h2>Upload your photo</h2>
             <input type="text" name="description" placeholder="description">
-            <input type="file" name="photo" url="" id="fileFotoInput">
+            <input type="text" id="myFile" value='' name="imgURL">
             <input type="submit" value="Save">
     </section>
 </form>

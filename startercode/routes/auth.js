@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const FotoFlow = require('../models/fotoFlow');
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -21,6 +22,11 @@ router.post("/login", passport.authenticate("local", {
 
 //PROFILE
 router.get("/profile", (req,res) => {
+
+   /* FotoFlow.find({ title }, "somethign", (err, user))
+  .then((fotoflows) => {
+    //console.log(fotoflows.path)
+  })  */
   res.render('private/profile')
 })
 

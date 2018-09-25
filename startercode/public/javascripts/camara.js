@@ -24,7 +24,8 @@ const captureButton = document.getElementById('capture');
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
         imgArr.push(image)
-        document.getElementById('fileFotoInput').setAttribute('url', image.src);
+        var data = image.src.replace(/^data:image\/\w+;base64,/, "");
+        document.getElementById('myFile').setAttribute('value', data);
     }
 
     navigator.mediaDevices.getUserMedia(constraints)

@@ -22,7 +22,7 @@ const captureButton = document.getElementById('capture');
 
     function convertCanvasToImage(canvas) {
         var image = new Image();
-        image.src = canvas.toDataURL("image/png");
+        image.src = canvas.toDataURL("image/jpg");
         imgArr.push(image)
         var data = image.src.replace(/^data:image\/\w+;base64,/, "");
         document.getElementById('myFile').setAttribute('value', data);

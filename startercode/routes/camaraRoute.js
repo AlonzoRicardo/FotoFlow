@@ -14,12 +14,7 @@ router.get('/camara', (req, res, next) => {
 
 
 router.post('/upload', (req, res, next) => {
-  //var data = req.body.imgURL.replace(/^data:image\/\w+;base64,/, "");
-  //let buf = Buffer.from(data, 'base64');
-  //console.log(buf);
-  
   //fs.writeFile('image.png', buf)
-  
   const flows = new FotoFlow({
     title: req.body.title,
     description: req.body.description,

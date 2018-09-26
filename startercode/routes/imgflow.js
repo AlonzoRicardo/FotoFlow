@@ -3,8 +3,11 @@ const FotoFlow = require('../models/fotoFlow');
 const router = express.Router();
 var videoshow = require('videoshow')
 const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+var ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfprobePath(ffprobePath);
+ffmpeg.setFfmpegPath(ffmpegPath);
+
 var fs = require('fs');
 
 router.get('/', (req, res, next) => {
@@ -33,12 +36,12 @@ function uniteAll(fotos) {
 
   var videoOptions = {
     fps: 25,
-    loop: 1, // seconds
-    transition: true,
-    transitionDuration: 1, // seconds
+    loop: 0.1, // seconds
+    transition: false,
+    transitionDuration: 0.1, // seconds
     videoBitrate: 1024,
     videoCodec: 'libx264',
-    size: '640x400?',
+    size: '640x640',
     audioBitrate: '128k',
     audioChannels: 2,
     format: 'mp4',
@@ -46,7 +49,7 @@ function uniteAll(fotos) {
   }
   
   videoshow(images, videoOptions)
-    .save('video.mp4')
+    .save('videos/video.mp4')
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
     })

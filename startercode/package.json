@@ -8,6 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
     "@ffprobe-installer/ffprobe": "^1.0.9",
     "atob": "^2.1.2",
     "base64-img": "^1.0.4",

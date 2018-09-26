@@ -4,8 +4,9 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   email: String,
-  password: String
-
+  password: String,
+  imgArr: [],
+  vidPath: String
 }, {
   timestamps: {
     createdAt: 'created_at',

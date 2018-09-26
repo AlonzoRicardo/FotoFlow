@@ -22,12 +22,13 @@ router.post("/login", passport.authenticate("local", {
 
 //PROFILE
 router.get("/profile", (req,res) => {
-
-   /* FotoFlow.find({ title }, "somethign", (err, user))
-  .then((fotoflows) => {
-    //console.log(fotoflows.path)
-  })  */
-  res.render('private/profile')
+  User.findOne({username : req.user.username})
+    .then((user) => {
+      res.render('private/profile', { user });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 })
 
 //SIGNUP
@@ -56,6 +57,7 @@ router.post("/signup", (req, res, next) => {
     const newUser = new User({
       username,
       email,
+      vidPath: 'no Vids yet',
       password: hashPass
     });
 

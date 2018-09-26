@@ -26,6 +26,18 @@ const captureButton = document.getElementById('capture');
         imgArr.push(image)
         var data = image.src.replace(/^data:image\/\w+;base64,/, "");
         document.getElementById('myFile').setAttribute('value', data);
+       // saveImage(data);
+    }
+
+    function saveImage(base64string) {
+        console.log(base64string);
+        //var imageData = base64string.split(',')[1];
+        var a = $("<a>").attr("href", "data:Application/base64," + base64string )
+                        .attr("download","image.png")
+                        .appendTo("body");
+
+            a[0].click();
+        a.remove();
     }
 
     navigator.mediaDevices.getUserMedia(constraints)

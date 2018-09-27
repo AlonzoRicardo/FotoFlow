@@ -49,8 +49,9 @@ router.post('/upload', (req, res, next) => {
 });
 
 //upload to cloudinary
-router.post('/cloud', (req, res, next) => {
-  let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
+ router.post('/cloud', (req, res, next) => {
+  res.redirect('/auth/profile')
+   let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
   cloudinary.v2.uploader.upload(
     //variable de nombre de video
     videofile,
@@ -58,11 +59,10 @@ router.post('/cloud', (req, res, next) => {
     function (error, result) {
       User.update({ username: req.user.username }, { $set: { vidPath: `${result.secure_url}` } })
       .then(() => {
-        res.redirect('/auth/profile')
       })
     }
-  )
-})
+  ) 
+}) 
 
 
 
@@ -139,7 +139,21 @@ function uniteAll(fotos, username) {
       console.error('ffmpeg stderr:', stderr)
     })
     .on('end', function (output) {
-      console.error('Video created in:', output)
+      console.error('Video created in:', output);
+
+      let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
+      cloudinary.v2.uploader.upload(
+        //variable de nombre de video
+        videofile,
+        { resource_type: "video" },
+        function (error, result) {
+          User.update({ username: req.user.username }, { $set: { vidPath: `${result.secure_url}` } })
+          .then(() => {
+            res.redirect('/auth/profile')
+          })
+        }
+      )
+    
     })
 }
 

@@ -4,14 +4,13 @@
 
 <h1>Foto Flow</h1>
 <div class="movies-wrapper">
-  {{#each fotoflows}}
+  {{#each users}}
+  <section>
+    <video  controls=""
+      src="{{this.vidPath}}" style="max-width: 274px; max-height: 260px; min-height: 50px; width: auto; height: auto;"></video>
+  </section>
 
-    <div class="movie-item">
-      <img src="data:image/jpg;base64,{{this.path}}" alt="">
-      <h4>{{this.title}}</h4>
-      <p>{{this.description}}</p>
-    </div>
   {{else}}
-    <p>There are no flow yet! :(</p>
+  <p>There are no flow yet! :(</p>
   {{/each}}
 </div>

@@ -15,7 +15,7 @@ const captureButton = document.getElementById('capture');
         context.drawImage(player, 0, 0, canvas.width, canvas.height);
         convertCanvasToImage(canvas)
         // Stop all video streams.
-        player.srcObject.getVideoTracks().forEach(track => track.stop());
+        //player.srcObject.getVideoTracks().forEach(track => track.stop());
     });
 
     function convertCanvasToImage(canvas) {

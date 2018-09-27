@@ -6,6 +6,7 @@ const multer = require('multer');
 const FotoFlow = require('../models/fotoFlow');
 const User = require("../models/User");
 const fs = require('fs')
+const path = require('path')
 //video requires
 const Video = require("../models/video");
 var videoshow = require('videoshow')
@@ -24,7 +25,6 @@ router.get('/camara', (req, res, next) => {
 
 //upload fotos to mongo
 router.post('/upload', (req, res, next) => {
-  let newUrl = '';
   const flows = new FotoFlow({
     title: req.body.title,
     description: req.body.description,
@@ -40,32 +40,35 @@ router.post('/upload', (req, res, next) => {
           let buff = new Buffer(user.imgArr[i], 'base64');
           fs.writeFileSync(`downloads/foto-${i}.png`, buff);
         }
-        uniteAll(user.imgArr)
+        uniteAll(user.imgArr, user.username)
       })
   })
-    //upload to cloudinary
     .then(() => {
-      cloudinary.v2.uploader.upload(
-        //variable de nombre de video
-        "videos/video3.mp4",
-        { resource_type: "video" },
-        function(error, result) {
-          newUrl = result.url;
-        }
-        )
-      })
-      .then(() => {
-      User.update({ username: req.user.username }, { $set: { vidPath: `${newUrl}` } })
-      
-    })
-    .then(()=> {
       res.redirect('/private/camara');
     })
     .catch((error) => {
       console.log(error);
     })
-
 });
+
+//upload to cloudinary
+router.post('/cloud', (req, res, next) => {
+
+  let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
+  console.log(videofile);
+  
+  cloudinary.v2.uploader.upload(
+    //variable de nombre de video
+    videofile,
+    { resource_type: "video" },
+    function (error, result) {
+      User.update({ username: req.user.username }, { $set: { vidPath: `${result.secure_url}` } })
+      .then(() => {
+        res.redirect('/auth/profile')
+      })
+    }
+  )
+})
 
 
 
@@ -113,7 +116,7 @@ router.post('/upload', (req, res, next) => {
 
 
 //PUTS ALL IMAGES TOGETHER TO FORM A VIDEO
-function uniteAll(fotos) {
+function uniteAll(fotos, username) {
   let images = [];
   for (let i = 0; i < fotos.length; i++) {
     let downloadPath = `downloads/foto-${i}.png`;
@@ -133,7 +136,7 @@ function uniteAll(fotos) {
   }
 
   videoshow(images, videoOptions)
-    .save('videos/video3.mp4')
+    .save(`videos/video${username}.mp4`)
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
     })

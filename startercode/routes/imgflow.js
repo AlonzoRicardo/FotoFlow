@@ -1,11 +1,12 @@
 const express = require('express');
 const FotoFlow = require('../models/fotoFlow');
 const router = express.Router();
+const User = require("../models/User");
 
 router.get('/', (req, res, next) => {
-  FotoFlow.find()
-    .then((fotoflows) => {
-      res.render('index', { fotoflows });
+  User.find()
+    .then((users) => {
+      res.render('index', { users });
     })
     .catch((error) => {
       console.log(error);

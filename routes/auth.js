@@ -57,7 +57,7 @@ router.post("/signup", (req, res, next) => {
     const newUser = new User({
       username,
       email,
-      vidPath: 'no Vids yet',
+      //vidPath: 'no Vids yet',
       password: hashPass
     });
 

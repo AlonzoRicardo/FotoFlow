@@ -54,7 +54,7 @@ router.post('/upload', (req, res, next) => {
 //upload to cloudinary
 router.post('/cloud', (req, res, next) => {
 
-  let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
+  let videofile = path.normalize(`${__dirname}/../public/uploads/video${req.user.username}.mp4`)
   console.log(videofile);
   
   cloudinary.v2.uploader.upload(
@@ -136,7 +136,7 @@ function uniteAll(fotos, username) {
   }
 
   videoshow(images, videoOptions)
-    .save(`videos/video${username}.mp4`)
+    .save(`public/uploads/video${username}.mp4`)
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
     })

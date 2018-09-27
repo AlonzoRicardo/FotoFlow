@@ -1,14 +1,11 @@
 const express = require('express');
-const uploadCloud = require('../config/cloudinary.js');
 const cloudinary = require('cloudinary');
 const router = express.Router();
-const multer = require('multer');
 const FotoFlow = require('../models/fotoFlow');
 const User = require("../models/User");
 const fs = require('fs')
 const path = require('path')
 //video requires
-const Video = require("../models/video");
 var videoshow = require('videoshow')
 const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;

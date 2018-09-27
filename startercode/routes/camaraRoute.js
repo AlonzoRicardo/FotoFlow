@@ -40,7 +40,7 @@ router.post('/upload', (req, res, next) => {
           let buff = new Buffer(user.imgArr[i], 'base64');
           fs.writeFileSync(`downloads/foto-${i}.png`, buff);
         }
-        uniteAll(user.imgArr, user.username)
+        uniteAll(user.imgArr, user.username, res)
       })
   })
     .then(() => {
@@ -50,25 +50,6 @@ router.post('/upload', (req, res, next) => {
       console.log(error);
     })
 });
-
-//upload to cloudinary
-router.post('/cloud', (req, res, next) => {
-
-  let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
-  console.log(videofile);
-  
-  cloudinary.v2.uploader.upload(
-    //variable de nombre de video
-    videofile,
-    { resource_type: "video" },
-    function (error, result) {
-      User.update({ username: req.user.username }, { $set: { vidPath: `${result.secure_url}` } })
-      .then(() => {
-        res.redirect('/auth/profile')
-      })
-    }
-  )
-})
 
 
 
@@ -116,7 +97,7 @@ router.post('/cloud', (req, res, next) => {
 
 
 //PUTS ALL IMAGES TOGETHER TO FORM A VIDEO
-function uniteAll(fotos, username) {
+function uniteAll(fotos, username, res) {
   let images = [];
   for (let i = 0; i < fotos.length; i++) {
     let downloadPath = `downloads/foto-${i}.png`;
@@ -145,8 +126,10 @@ function uniteAll(fotos, username) {
       console.error('ffmpeg stderr:', stderr)
     })
     .on('end', function (output) {
-      console.error('Video created in:', output)
-    })
+      console.error('Video created in:', output);
+      User.update({ username: username }, { $set: { vidPath: `../${output}` } })
+    }
+    )
 }
 
 module.exports = router;

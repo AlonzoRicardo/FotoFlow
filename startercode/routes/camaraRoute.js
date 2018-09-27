@@ -117,7 +117,7 @@ function uniteAll(fotos, username, res) {
   }
 
   videoshow(images, videoOptions)
-    .save(`videos/video${username}.mp4`)
+    .save(`public/videos/video${username}.mp4`)
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
     })
@@ -127,7 +127,10 @@ function uniteAll(fotos, username, res) {
     })
     .on('end', function (output) {
       console.error('Video created in:', output);
-      User.update({ username: username }, { $set: { vidPath: `../${output}` } })
+      User.update({ username: username }, { $set: { vidPath: `videos/video${username}.mp4` } })
+       .then(() => {
+        console.log('asdf');
+      }) 
     }
     )
 }

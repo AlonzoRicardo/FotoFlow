@@ -35,7 +35,7 @@ router.post('/upload', (req, res, next) => {
       .then((user) => {
         for (let i = 0; i < user.imgArr.length; i++) {
           let buff = new Buffer(user.imgArr[i], 'base64');
-          fs.writeFileSync(`public/uploads/foto-${i}.png`, buff);
+          fs.writeFileSync(`downloads/foto-${i}.png`, buff);
         }
         uniteAll(user.imgArr, user.username)
       })
@@ -50,7 +50,7 @@ router.post('/upload', (req, res, next) => {
 
 //upload to cloudinary
 router.post('/cloud', (req, res, next) => {
-  let videofile = path.normalize(`${__dirname}/../public/uploads/video${req.user.username}.mp4`)
+  let videofile = path.normalize(`${__dirname}/../videos/video${req.user.username}.mp4`)
   cloudinary.v2.uploader.upload(
     //variable de nombre de video
     videofile,
@@ -113,7 +113,7 @@ router.post('/cloud', (req, res, next) => {
 function uniteAll(fotos, username) {
   let images = [];
   for (let i = 0; i < fotos.length; i++) {
-    let downloadPath = `public/uploads/foto-${i}.png`;
+    let downloadPath = `downloads/foto-${i}.png`;
     images.push(downloadPath);
   }
 
@@ -130,7 +130,7 @@ function uniteAll(fotos, username) {
   }
 
   videoshow(images, videoOptions)
-    .save(`public/uploads/video${username}.mp4`)
+    .save(`downloads/video${username}.mp4`)
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
     })

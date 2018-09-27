@@ -16,7 +16,7 @@ global.btoa = require("btoa");
     
 
 mongoose
-  .connect('mongodb://localhost/FOTOFLOW', {useNewUrlParser: true})
+  .connect(process.env.BDURL, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

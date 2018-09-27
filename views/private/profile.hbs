@@ -1,12 +1,16 @@
-<a href="/private/camara">ADD FOTO FLOW</a>
-<h1>Foto Flow</h1>
-<div class="movies-wrapper">
-      <h4>{{user.username}}</h4>
-  {{#each user.imgArr}}
-    <div class="movie-item">
-      <img src="data:image/jpg;base64,{{this}}" alt="">
+<div class="profileContent">
+  <div class="container">
+  <div class="brand">
+    <h4 class="username">{{user.username}}</h4>
+      <a class="addFoto" href="/private/camara">ADD FOTO FLOW</a>
+      <h1>FotoFlow</h1>
     </div>
-  {{else}}
+    <div class="row">
+      {{#each user.imgArr}}
+      <img class="card" src="data:image/jpg;base64,{{this}}" alt="">
+      {{else}}
+    </div>
     <p>There are no flow yet! :(</p>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>

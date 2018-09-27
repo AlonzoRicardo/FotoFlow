@@ -35,3 +35,100 @@ a {
   .input-field .prefix.active {
     color: #000;
   }
+
+  .card {
+    display: inline;
+    margin: 0 2%;
+  }
+
+  .addFoto {
+    float: right;
+    margin: 0 3vw 0 0;
+  }
+
+  .addFoto:link, .addFoto:visited {
+    background-color: rgb(36, 30, 30);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.addFoto:hover, .addFoto:active{
+    background-color: rgb(48, 40, 40);
+}
+
+.username {
+  text-align: center;
+}
+
+.profileContent{
+  padding: 5px;
+  margin: 30px 0 0 0;
+}
+
+.camaraContent {
+  padding: 40px;
+}
+
+.inputs {
+  margin: 10px 0 0 0;
+  float: right;
+  padding: 10px;
+}
+
+.inputs input {
+  margin: 2px 0;
+}
+
+.textarea {
+  text-align: left;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+.text64 {
+  text-align: left;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 240px; 
+  margin: 10px 0 30px 0;
+}
+
+#player {
+  margin: 20px 0;
+}
+
+.save {
+  margin: 10px 0 0 0;
+  border: none;
+  width: 100%;
+  height: 30px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.save:hover {
+  background-color: rgb(27, 27, 27); /* Green */
+  color: rgb(32, 32, 32);
+}
+
+.camara-header{
+  float: left;
+}

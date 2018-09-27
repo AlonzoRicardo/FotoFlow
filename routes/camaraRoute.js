@@ -53,10 +53,7 @@ router.post('/upload', (req, res, next) => {
 
 //upload to cloudinary
 router.post('/cloud', (req, res, next) => {
-
   let videofile = path.normalize(`${__dirname}/../public/uploads/video${req.user.username}.mp4`)
-  console.log(videofile);
-  
   cloudinary.v2.uploader.upload(
     //variable de nombre de video
     videofile,

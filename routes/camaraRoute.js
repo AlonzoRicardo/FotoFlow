@@ -35,7 +35,7 @@ router.post('/upload', (req, res, next) => {
       .then((user) => {
         for (let i = 0; i < user.imgArr.length; i++) {
           let buff = new Buffer(user.imgArr[i], 'base64');
-          fs.writeFileSync(`downloads/foto-${i}.png`, buff);
+          fs.writeFileSync(`public/uploads/foto-${i}.png`, buff);
         }
         uniteAll(user.imgArr, user.username)
       })
@@ -113,7 +113,7 @@ router.post('/cloud', (req, res, next) => {
 function uniteAll(fotos, username) {
   let images = [];
   for (let i = 0; i < fotos.length; i++) {
-    let downloadPath = `downloads/foto-${i}.png`;
+    let downloadPath = `public/uploads/foto-${i}.png`;
     images.push(downloadPath);
   }
 

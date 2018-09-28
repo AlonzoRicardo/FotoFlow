@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	letter-spacing: 2px
 }
 
-
 footer {
   color: #999;
   position: fixed;
@@ -70,7 +69,7 @@ footer {
 }
 
 .signUp {
-  margin: 11vw;
+  margin: 11vw
 }
 
 #form {
@@ -116,9 +115,6 @@ footer {
   transition: 0.3s ease background;
 }
 
-#form a {
-
-}
 
 .movies-wrapper { 
   display: flex;
@@ -127,7 +123,7 @@ footer {
   height: auto; 
   justify-content: space-around;
 }
-
+/* 
   .input-field label {
     color: #000;
   }
@@ -153,7 +149,7 @@ footer {
   
   .input-field .prefix.active {
     color: #000;
-  } 
+  }  */
 
 
 
@@ -208,6 +204,11 @@ footer {
   margin: 5vw 0 0 0;
 }
 
+.profImg {
+  width: 322px;
+ height: 242px;
+}  
+
 .Content {
   padding: 40px;
 }
@@ -248,6 +249,7 @@ footer {
   position: relative;
   width: 100%;
   height: 240px; 
+
   margin: 10px 0 20px 0;
 }
 

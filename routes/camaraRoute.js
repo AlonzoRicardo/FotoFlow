@@ -45,53 +45,6 @@ router.post('/upload', (req, res, next) => {
     })
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //PUTS ALL IMAGES TOGETHER TO FORM A VIDEO
 function uniteAll(fotos, username, res) {
   let images = [];

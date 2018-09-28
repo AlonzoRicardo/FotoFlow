@@ -109,27 +109,33 @@ footer {
   height: auto;
   justify-content: space-around; }
 
-.input-field label {
-  color: #000; }
-
-.input-field input[type=text]:focus + label {
-  color: #000; }
-
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
-
-.input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
-
-.input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000; }
-
-.input-field .prefix.active {
-  color: #000; }
-
+/* 
+  .input-field label {
+    color: #000;
+  }
+  
+  .input-field input[type=text]:focus + label {
+    color: #000;
+  }
+   
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+   
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  
+  .input-field .prefix.active {
+    color: #000;
+  }  */
 /*Ricardo*/
 .card {
   display: inline;
@@ -156,6 +162,10 @@ footer {
 .profileContent {
   padding: 5px;
   margin: 5vw 0 0 0; }
+
+.profImg {
+  width: 322px;
+  height: 242px; }
 
 .Content {
   padding: 40px; }
@@ -212,7 +222,6 @@ footer {
   color: #202020; }
 
 .camaraContent {
-  margin: 0 3vw 0 0;
   padding: 60px; }
 
 .camara-header {

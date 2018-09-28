@@ -1,14 +1,25 @@
 body {
-  font-family: 14px 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: 14px "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 /*Yamilet*/
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: 'Montserrat', sans-serif; font-weight:700;
-	text-transform: uppercase;
-	letter-spacing: 2px
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-
 
 footer {
   color: #999;
@@ -24,38 +35,53 @@ footer {
   padding-right: 20px;
 }
 
-.navbar .nav-link{
+p,
+button, a{
+  color: rgb(196, 192, 192);
+}
+
+.navbar .nav-link {
   color: #fff;
-  &:hover{color: rgb(219, 225, 226)}
+  &:hover {
+    color: rgb(219, 225, 226);
+  }
 }
 
 .index {
   display: flex;
-	background: url('../images/fondo4.jpg') center center;
-	background-size: cover;
-	opacity: 1;
-	border-radius: 0px;
-	color: rgb(255, 255, 255);
-	text-transform: uppercase;
+  background: url("../images/fondo4.jpg") center center;
+  background-size: cover;
+  opacity: 1;
+  border-radius: 0px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
   margin: 0;
   overflow: hidden;
 }
 
-#black {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: auto;
-	min-width: 100%;
-	height: auto;
-	min-height: 100%;
-	background: rgba(0, 0, 0, 0.198);
+.login-container {
+  background: url("../images/fondo-login.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
 }
 
-.text{
+.login {
+  padding-top: 100px;
+  margin-left: 0;
+}
+
+@media screen and (max-width:600px) {
+  .login-container, .login, {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+.text {
   padding: 200px 100px;
   float: left;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 
@@ -64,6 +90,25 @@ footer {
   border-top: 1px solid #f8f8f8;
 }
 
+.movies-wrapper {
+  display: flex;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#black {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.198);
+}
 
 #form {
   margin: 30px auto;
@@ -71,7 +116,7 @@ footer {
 }
 
 #form label {
-  color: #666;
+  color: #fff;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
@@ -108,19 +153,7 @@ footer {
   transition: 0.3s ease background;
 }
 
-#form a {
-
-}
-
-.movies-wrapper { 
-  display: flex;
-  padding: 50px;
-  width: 100%; 
-  height: auto; 
-  justify-content: space-around;
-}
-
-  /*  label color 
+/*  label color 
   .input-field label {
     color: #000;
   }
@@ -148,55 +181,37 @@ footer {
     color: #000;
   } */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*Ricardo*/
-  .card {
-    display: inline;
-    margin: 0 2%;
-  }
-
-  .addFoto {
-    float: right;
-    margin: 0 3vw 0 0;
-  }
-
-  .addFoto:link, .addFoto:visited {
-    background-color: rgb(36, 30, 30);
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+/*Ricardo*/
+.card {
+  display: inline;
+  margin: 0 2%;
 }
 
-.addFoto:hover, .addFoto:active{
-    background-color: rgb(48, 40, 40);
+.addFoto {
+  float: right;
+  margin: 0 3vw 0 0;
+}
+
+.addFoto:link,
+.addFoto:visited {
+  background-color: rgb(36, 30, 30);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.addFoto:hover,
+.addFoto:active {
+  background-color: rgb(48, 40, 40);
 }
 
 .username {
   text-align: center;
 }
 
-.profileContent{
+.profileContent {
   padding: 5px;
   margin: 30px 0 0 0;
 }
@@ -240,7 +255,7 @@ footer {
 .canvas {
   position: relative;
   width: 100%;
-  height: 240px; 
+  height: 240px;
   margin: 10px 0 30px 0;
 }
 
@@ -262,7 +277,7 @@ footer {
   color: rgb(32, 32, 32);
 }
 
-.camara-header{
+.camara-header {
   float: left;
 }
 
@@ -278,8 +293,8 @@ footer {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */

@@ -1,8 +1,9 @@
 <div class="camaraContent">
 
     <div class="camara-header">
-        <h2>Upload your photo</h2>
+        <h2>Capture your photo</h2>
         <button class="save" id="capture">Capture</button>
+        <video class="card" id="player" autoplay="autoplay"></video>
     </div>
 
     <form action="/private/upload" method="POST" id="wait">
@@ -22,11 +23,10 @@
     <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <p>Waiting for video upload</p>
+            <p>Wait while we create the video</p>
         </div>
     </div>
 
-    <video class="card" id="player" autoplay="autoplay"></video>
 
 
 </div>

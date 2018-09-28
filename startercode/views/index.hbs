@@ -1,13 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<h1>{{user.username}}</h1>
+<div class="index black ">
+  <div class="text ">
+    <div class="col-md-12 animated slideInLeft ">
+      <h2>{{title}}</h2>
+      <hr class="intro-divider animated slideInLeft ">
+    </div>
+    <div class="col-md-12 ">
+      <h2 class="subtitle animated slideInLeft ">Un proyecto que simula la técnica de cámara rápida, técnica muy popular usada en cinematografía y fotografía para mostrar
+        diferentes motivos o sucesos que por lo general suceden a velocidades muy lentas e imperceptibles al ojo humano.</h2>
+    </div>
+  </div>
+</div>
 
-<h1>Foto Flow</h1>
-<div class="movies-wrapper">
+</div>
+
+<div class="movies-wrapper ">
   {{#each users}}
   <section>
-    <video  controls=""
-      src="{{this.vidPath}}" style="max-width: 274px; max-height: 260px; min-height: 50px; width: auto; height: auto;"></video>
+    <video controls=" " src="{{this.vidPath}} " style="max-width: 300px; max-height: 400px "></video>
   </section>
 
   {{else}}

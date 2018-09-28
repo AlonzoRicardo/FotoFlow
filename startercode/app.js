@@ -62,7 +62,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   
 
 // default value for title local
-app.locals.title = 'Vaina2 - Generated with IronGenerator';
+app.locals.title = 'FOTO FLOW';
 
 
 // Enable authentication using session + passport

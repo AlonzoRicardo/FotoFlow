@@ -2,6 +2,11 @@ body {
   font-family: 14px "Montserrat", Helvetica, Arial, sans-serif;
 }
 
+nav {
+  height: 50px;
+  background: rgb(38, 40, 46);
+}
+
 /*Yamilet*/
 h1,
 h2,
@@ -30,7 +35,7 @@ footer {
   height: 40px;
   width: 100%;
   padding: 10px 0;
-  font-size: 12px;
+  font-size: 15px;
   text-align: right;
   padding-right: 20px;
 }
@@ -57,14 +62,6 @@ button, a{
   text-transform: uppercase;
   margin: 0;
   overflow: hidden;
-}
-
-.login-container {
-  background: url("../images/fondo-login.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
 }
 
 .login {
@@ -110,6 +107,10 @@ button, a{
   background: rgba(0, 0, 0, 0.198);
 }
 
+.signUp {
+  margin: 11vw
+}
+
 #form {
   margin: 30px auto;
   width: 380px;
@@ -133,7 +134,7 @@ button, a{
 }
 
 #form button {
-  background: #747a7e;
+  background: rgb(38, 40, 46);
   border: 1px solid #747a7e;
   border-radius: 4px;
   color: #fff;
@@ -153,33 +154,7 @@ button, a{
   transition: 0.3s ease background;
 }
 
-/*  label color 
-  .input-field label {
-    color: #000;
-  }
-  /* label focus color 
-  .input-field input[type=text]:focus + label {
-    color: #000;
-  }
-  /* label underline focus color 
-  .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* valid color 
-  .input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* invalid color 
-  .input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* icon prefix focus color 
-  .input-field .prefix.active {
-    color: #000;
-  } */
+
 
 /*Ricardo*/
 .card {
@@ -213,17 +188,22 @@ button, a{
 
 .profileContent {
   padding: 5px;
-  margin: 30px 0 0 0;
+  margin: 5vw 0 0 0;
 }
 
-.camaraContent {
+.profImg {
+  width: 322px;
+ height: 242px;
+}  
+
+.Content {
   padding: 40px;
 }
 
 .inputs {
-  margin: 10px 0 0 0;
+  margin: 82px 0 0 0;
   float: right;
-  padding: 10px;
+  padding: 10px 10px 50px 10px;
 }
 
 .inputs input {
@@ -255,8 +235,8 @@ button, a{
 .canvas {
   position: relative;
   width: 100%;
-  height: 240px;
-  margin: 10px 0 30px 0;
+  height: 240px; 
+  margin: 10px 0 20px 0;
 }
 
 #player {
@@ -264,7 +244,7 @@ button, a{
 }
 
 .save {
-  margin: 10px 0 0 0;
+  margin: 0;
   border: none;
   width: 100%;
   height: 30px;
@@ -277,7 +257,13 @@ button, a{
   color: rgb(32, 32, 32);
 }
 
-.camara-header {
+.camaraContent {
+  padding: 60px;
+}
+
+.camara-header{
+  text-align: center;
+  padding: 50px 70px;
   float: left;
 }
 

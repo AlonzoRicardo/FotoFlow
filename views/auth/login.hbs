@@ -1,49 +1,24 @@
-<div class="login-container">
-    <div class="login">
-      <form action="/auth/login" method="POST" id="form">
+  <div class="login animated slideInLeft ">
+    <form action="/auth/login" method="POST" id="form">
+      <h2>Login</h2>
 
-        <h3>Login</h3>
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="username">
 
-        <label for="username">Username</label>
-        <input id="username" type="text" name="username" placeholder="username">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="password"> 
+      
+      <br><br>
 
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="password"> {{#if message }}
-        <br>
-        <div class="error-message">{{ message }}</div>
-        {{/if}}
-        <button>Login</button>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-        <p class="account-message">
-          Don't have an account?
-          <a href="/auth/signup">Sign up</a>
-        </p>
-      </form>
-    </div>
-</div>
+      <button>Login</button>
 
-
-{{!--
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username"></label>
-  <input id="username" type="text" name="username" placeholder="username">
-
-  <br>
-  <br>
-
-  <label for="password"></label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br> {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br>
-  <br>
-
-  <button>Login</button>
-
-  <p class="account-message">
-    Or
-    <a href="/auth/signup">Signup</a>
-  </p>
-</form> --}}
+      <p class="account-message">
+        Don't have an account?
+        <a href="/auth/signup">Sign up</a>
+      </p>
+    </form>
+  </div>

@@ -32,8 +32,6 @@ navigator.mediaDevices.getUserMedia(constraints)
         player.srcObject = stream;
     });
 
-
-
 let modal = document.getElementById('myModal');
 $('#wait').submit(() => {
     modal.style.display = "block";
@@ -45,6 +43,3 @@ $('#wait').submit(() => {
 function closeModal() {
     modal.style.display = "none";
 }
-
-
-

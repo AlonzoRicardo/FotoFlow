@@ -1,0 +1,16 @@
+<div class="profileContent">
+  <div class="container">
+  <div class="brand">
+    <h4 class="username">{{user.username}}</h4>
+      <a class="addFoto" href="/private/camara">ADD FOTO FLOW</a>
+      <h1>FotoFlow</h1>
+    </div>
+    <div class="row">
+      {{#each user.imgArr}}
+      <img class="card" src="data:image/jpg;base64,{{this}}" alt="">
+      {{else}}
+    </div>
+    <p>There are no flow yet! :(</p>
+    {{/each}}
+  </div>
+</div>

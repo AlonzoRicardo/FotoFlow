@@ -1,0 +1,32 @@
+<div class="camaraContent">
+
+    <div class="camara-header">
+        <h2>Upload your photo</h2>
+        <button class="save" id="capture">Capture</button>
+    </div>
+
+    <form action="/private/upload" method="POST" id="wait">
+        <div class="inputs">
+
+            <input class="text64" type="text" name="title" placeholder="title">
+            <section>
+                <textarea class="textarea" type="text" name="description" placeholder="description"></textarea>
+                <input class="text64" id="myFile" value='' name="imgURL">
+            </section>
+            <canvas class="card canvas" id="canvas"></canvas>
+            <input class="save" type="submit" value="Save">
+
+        </div>
+    </form>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Waiting for video upload</p>
+        </div>
+    </div>
+
+    <video class="card" id="player" autoplay="autoplay"></video>
+
+
+</div>

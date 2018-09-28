@@ -40,13 +40,12 @@ router.post('/upload', (req, res, next) => {
         uniteAll(user.imgArr, user.username, res)
       })
   })
-    .then(() => {
-      res.redirect('/private/camara');
-    })
     .catch((error) => {
       console.log(error);
     })
 });
+
+
 
 
 
@@ -113,7 +112,7 @@ function uniteAll(fotos, username, res) {
     pixelFormat: 'yuv420p'
   }
 
-  videoshow(images, videoOptions)
+  videoshow(images, videoOptions, res)
     .save(`public/videos/video${username}.mp4`)
     .on('start', function (command) {
       console.log('ffmpeg process started:', command)
@@ -126,8 +125,9 @@ function uniteAll(fotos, username, res) {
       console.error('Video created in:', output);
       User.update({ username: username }, { $set: { vidPath: `videos/video${username}.mp4` } })
        .then(() => {
+         
          console.log('VIDEO UPDATED');
-      }) 
+      })
     }
     )
 }
